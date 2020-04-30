@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Mostrar usuaris</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        .topTxt {
+            font-size: smaller;
+            color: darkgrey;
+        }
+    </style>
+</head>
+<body class="body">
+<p class="topTxt" th:text="'Hola Marteta JSON:' + ${datos}"/>
+<div class="container mt-4">
+    <div class="col-sm-6">
+        <div class="card">
+            <form th:action="@{/save}" th:object="${user}" th:method="POST">
+                <div class="card-header">
+                    <h3>Crear usuari</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input th:field="*{id}" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input th:field="*{name}" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Contrassenya</label>
+                        <input th:field="*{password}" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Adresa electrònica</label>
+                        <input th:field="*{mail}" type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Desar" class="btn btn-success">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
