@@ -1,6 +1,7 @@
 package com.jumpering.loraconet.controller;
 
 import com.jumpering.loraconet.dto.ProductEntity;
+import com.jumpering.loraconet.dto.UserEntity;
 import com.jumpering.loraconet.exceptions.NameException;
 import com.jumpering.loraconet.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.persistence.EntityNotFoundException;
-
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class ProductController
 {
     @Autowired
