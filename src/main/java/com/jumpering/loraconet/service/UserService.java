@@ -36,8 +36,9 @@ public class UserService {
         return userRepository.findByMail(mail);
     }
 
-    public void saveUser(UserEntity userEntity){
+    public UserEntity saveUser(UserEntity userEntity){
         userRepository.save(userEntity);
+        return userEntity;
     }
 
     public void deleteUserById(int id){
